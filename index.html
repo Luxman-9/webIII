@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <!-- Page 1: Slideshow Foto -->
+  <section class="page" id="page1">
+    <div class="slideshow" id="slideshow"></div>
+    <div class="content">
+      <h1>Luxman Insanul Kamil</h1>
+      <p>sedang mempelajari teknologi, dan mengedepankan informasi di dunia teknologi dunia aviasi & teknologi pertahanan.</p>
+      <br>
+      <p>Berikut</p>
+      <P>tiga teknologi tinggi yang tidak hanya canggih, tapi juga memiliki dampak signifikan pada kestabilan dunia:</P>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/luxman-insanul-kamil-a84a65279" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Luxman-9" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:Lukmankamil672@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page 2: B-2 Spirit -->
+  <section class="page b2">
+    <video autoplay muted loop class="bg-video">
+      <source src="video/b2_loop.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+      <h2>B-2 Spirit</h2>
+      <p><strong>Performa:</strong><br>
+        Kecepatan: Mach 0.95 (~1.010 km/jam)<br>
+        Jangkauan: ~11.000 km<br>
+        ketinggian: 15.000 m<br>
+        Muatan: 18.000 kg senjata<br>
+        Awak: 2 orang<br>
+        Stealth: Sangat rendah
+      </p>
+      <br>
+      <p><strong>Rekam Jejak Keberhasilan:</strong><br>
+        >130 misi di Kosovo. Efektivitas 90% tanpa terdeteksi. Misi nonstop 44 jam dari AS, Keberhasilan misi: Operasi Allied Force, Operation Iraqi Freedom.
+      </p>
+    </div>
+  </section>
+
+  <!-- Page 3: RQ-4 Global Hawk -->
+  <section class="page rq4">
+    <video autoplay muted loop class="bg-video">
+      <source src="video/rq4_loop.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+     <h2>RQ-4 Global Hawk</h2>
+      <p><strong>Performa:</strong><br>
+        Kecepatan: ~630 km/jam<br>
+        Ketinggian: 18.000 meter<br>
+        Jangkauan: ~22.000 km<br>
+        Lama Terbang: 34 jam<br>
+        Awak: Tanpa awak
+      </p>
+      <br>
+      <p><strong>Rekam Jejak Keberhasilan:</strong><br>
+        >320.000 jam misi intelijen. Efektif mendeteksi musuh dari ketinggian tanpa terlihat, Keberhasilan misi: ISR di Afghanistan, Irak, dan Ukraina.
+      </p>
+    </div>
+  </section>
+
+  <!-- Page 4: Tupolev Tu-160 -->
+  <section class="page tupolev">
+    <video autoplay muted loop class="bg-video">
+      <source src="video/tu160_loop.mp4" type="video/mp4">
+    </video>
+    <div class="content">
+     <p><strong>Performa:</strong><br>
+        Kecepatan: Mach 2.05 (~2.200 km/jam)<br>
+        Jangkauan: ~12.300 km<br>
+        Muatan: 40.000 kg senjata<br>
+        Mesin: 4 turbofan<br>
+        Ketinggian: 16.000 m<br>
+        Awak: 4 orang
+      </p>
+      <br>
+      <p><strong>Rekam Jejak Keberhasilan:</strong><br>
+        Digunakan di Suriah. Menyelesaikan misi dengan rudal jelajah Kh-101 dari Rusia ke Timur Tengah.Keberhasilan misi: Operasi udara di Suriah & latihan global Rusia.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    const slides = [
+      'img/b2-1.jpg',
+      'img/rq4-1.jpg',
+      'img/tu160-1.jpg'
+    ];
+    let slideIndex = 0;
+    const slideshow = document.getElementById('slideshow');
+
+    function changeSlide() {
+      slideshow.style.backgroundImage = `url(${slides[slideIndex]})`;
+      slideIndex = (slideIndex + 1) % slides.length;
+    }
+
+    changeSlide();
+    setInterval(changeSlide, 4000);
+  </script>
+</body>
+</html>
