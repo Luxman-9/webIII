@@ -8,5 +8,5 @@ Website II untuk perbaruan.
 * Informasi Kontak
 
 **Cara Melihat:**
-1.  Unduh seluruh folder ``.
+1.  untuk meihat `https://luxweb3.netlify.app/`.
 
