@@ -84,11 +84,28 @@ p {
 
 footer {
   text-align: center;
-  padding: 15px;
+  padding: 20px;
   background-color: #111;
   color: white;
   font-size: 0.9rem;
   flex-shrink: 0;
+}
+
+footer .social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .social-links a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+footer .social-links a:hover {
+  color: #0abde3; 
 }
 
 body {
