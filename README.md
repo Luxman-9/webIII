@@ -3,7 +3,6 @@
 Website II untuk perbaruan.
 
 **Isi:**
-* Pengenalan Diri
 * 3 teknologi dominasi
 * Informasi Kontak
 
