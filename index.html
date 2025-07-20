@@ -4,88 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio - Luxman Insanul Kamil</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <link rel="stylesheet" href="style.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
 <body>
 
-    <header>
-        <h1>Portofolio Luxman Insanul Kamil</h1>
-        <nav>
-            <ul>
-                <li><a href="#instrumentasi">Instrumentasi</a></li>
-                <li><a href="#pesawat-tempur">Pesawat Tempur</a></li>
-                <li><a href="#identitas">Identitas</a></li>
-            </ul>
-        </nav>
+    <header class="navbar"> <div class="container"> <a href="#" class="logo">LUXWEB3</a> <nav>
+                <ul>
+                    <li><a href="#hero-slideshow" class="active">Beranda</a></li> <li><a href="#instrumentasi">Instrumentasi</a></li>
+                    <li><a href="#pesawat-tempur">Pesawat Tempur</a></li>
+                    <li><a href="#identitas">Identitas</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="hero-slideshow">
-            <div class="hero-content">
-                <h2>Selamat Datang di Portofolio Saya</h2>
-                <p>Jelajahi dunia instrumentasi dalam pertahanan udara.</p>
-            </div>
+        <section id="hero-slideshow" class="page"> <div class="hero-overlay"></div> <div class="content">
+                <h1>Instrumentasi di dalam Dunia Pertahanan Udara</h1>
+                <p>Instrumentasi adalah bidang dalam fisika terapan yang berperan penting dalam pengukuran, pengawasan, dan pengendalian sistem. Dalam teknologi pertahanan udara, instrumentasi menjadi fondasi penting bagi navigasi, pengintaian, serta pengoperasian misi militer.</p>
+                </div>
         </section>
 
-        <section id="instrumentasi" class="content-section">
-            <h2>Instrumentasi di dalam Dunia Pertahanan Udara</h2>
+        <section id="instrumentasi" class="section"> <h2>Instrumentasi di dalam Dunia Pertahanan Udara</h2>
             <p>Instrumentasi adalah bidang dalam fisika terapan yang berperan penting dalam pengukuran, pengawasan, dan pengendalian sistem. Dalam teknologi pertahanan udara, instrumentasi menjadi fondasi penting bagi navigasi, pengintaian, serta pengoperasian misi militer.</p>
             <p>Secara sederhana, instrumentasi adalah “indera” dari pesawat. Seperti manusia butuh mata dan telinga untuk melihat dan mendengar, pesawat juga membutuhkan sensor untuk mendeteksi posisi, ketinggian, kecepatan, suhu mesin, tekanan kabin, hingga deteksi radar lawan.</p>
             <p>Dalam B-2 Spirit, instrumentasi membantu mempertahankan siluman (stealth) melalui pengukuran bentuk gelombang radar dan suhu permukaan. RQ-4 Global Hawk mengandalkan sistem instrumentasi untuk melakukan pengawasan otomatis selama berjam-jam tanpa awak. Sedangkan Tu-160 menggunakan sistem radar presisi tinggi dan kontrol mesin supersonik yang dikendalikan lewat sistem elektronik terintegrasi.</p>
             <p>Fisika hadir di balik setiap komponen: hukum gerak Newton mengatur sistem navigasi inersia, sensor inframerah menggunakan prinsip radiasi benda hitam, dan pengukuran kecepatan udara memanfaatkan efek tekanan (pitot tube). Inilah bukti bahwa instrumentasi bukan sekadar teknologi tapi jantung dari setiap misi pertahanan modern.</p>
         </section>
 
-        <section id="pesawat-tempur" class="content-section">
-            <h2>Pesawat-Pesawat Legendaris</h2>
+        <section id="pesawat-tempur" class="section"> <h2>Pesawat-Pesawat Legendaris</h2>
 
-            <article class="aircraft-card">
-                <img src="img/b2-1.jpg" alt="B-2 Spirit">
-                <h3>B-2 Spirit</h3>
-                <h4>Performa:</h4>
-                <ul>
-                    <li>Kecepatan: Mach 0.95 (~1.010 km/jam)</li>
-                    <li>Jangkauan: ~11.000 km</li>
-                    <li>Ketinggian: 15.000 m</li>
-                    <li>Awak: 2 orang</li>
-                    <li>Stealth: Sangat rendah</li>
-                </ul>
-                <h4>Rekam Jejak Keberhasilan:</h4>
-                <p>>130 misi di Kosovo. Efektivitas 90% tanpa terdeteksi. Misi nonstop 44 jam dari AS. Keberhasilan misi: Operasi Allied Force, Operation Iraqi Freedom.</p>
-            </article>
+            <div class="aircraft-grid"> <article class="aircraft-card">
+                    <img src="img/b2-1.jpg" alt="B-2 Spirit">
+                    <div class="aircraft-card-content">
+                        <h3>B-2 Spirit</h3>
+                        <h4>Performa:</h4>
+                        <ul>
+                            <li>Kecepatan: Mach 0.95 (~1.010 km/jam)</li>
+                            <li>Jangkauan: ~11.000 km</li>
+                            <li>Ketinggian: 15.000 m</li>
+                            <li>Awak: 2 orang</li>
+                            <li>Stealth: Sangat rendah</li>
+                        </ul>
+                        <h4>Rekam Jejak Keberhasilan:</h4>
+                        <p>&gt;130 misi di Kosovo. Efektivitas 90% tanpa terdeteksi. Misi nonstop 44 jam dari AS, Keberhasilan misi: Operasi Allied Force, Operation Iraqi Freedom.</p>
+                    </div>
+                </article>
 
-            <article class="aircraft-card">
-                <img src="img/rq4-1.jpg" alt="RQ-4 Global Hawk">
-                <h3>RQ-4 Global Hawk</h3>
-                <h4>Performa:</h4>
-                <ul>
-                    <li>Kecepatan: ~630 km/jam</li>
-                    <li>Ketinggian: 18.000 meter</li>
-                    <li>Jangkauan: ~22.000 km</li>
-                    <li>Lama Terbang: 34 jam</li>
-                    <li>Awak: Tanpa awak</li>
-                </ul>
-                <h4>Rekam Jejak Keberhasilan:</h4>
-                <p>>320.000 jam misi intelijen. Efektif mendeteksi musuh dari ketinggian tanpa terlihat. Keberhasilan misi: ISR di Afghanistan, Irak, dan Ukraina.</p>
-            </article>
+                <article class="aircraft-card">
+                    <img src="img/rq4-1.jpg" alt="RQ-4 Global Hawk">
+                    <div class="aircraft-card-content">
+                        <h3>RQ-4 Global Hawk</h3>
+                        <h4>Performa:</h4>
+                        <ul>
+                            <li>Kecepatan: ~630 km/jam</li>
+                            <li>Ketinggian: 18.000 meter</li>
+                            <li>Jangkauan: ~22.000 km</li>
+                            <li>Lama Terbang: 34 jam</li>
+                            <li>Awak: Tanpa awak</li>
+                        </ul>
+                        <h4>Rekam Jejak Keberhasilan:</h4>
+                        <p>&gt;320.000 jam misi intelijen. Efektif mendeteksi musuh dari ketinggian tanpa terlihat, Keberhasilan misi: ISR di Afghanistan, Irak, dan Ukraina.</p>
+                    </div>
+                </article>
 
-            <article class="aircraft-card">
-                <img src="img/tu160-1.jpg" alt="Tupolev-160">
-                <h3>Tupolev-160</h3>
-                <h4>Performa:</h4>
-                <ul>
-                    <li>Kecepatan: Mach 2.05 (~2.200 km/jam)</li>
-                    <li>Jangkauan: ~12.300 km</li>
-                    <li>Muatan: 40.000 kg senjata</li>
-                    <li>Mesin: 4 turbofan</li>
-                    <li>Ketinggian: 16.000 m</li>
-                    <li>Awak: 4 orang</li>
-                </ul>
-                <h4>Rekam Jejak Keberhasilan:</h4>
-                <p>Digunakan di Suriah. Menyelesaikan misi dengan rudal jelajah Kh-101 dari Rusia ke Timur Tengah. Keberhasilan misi: Operasi udara di Suriah & latihan global Rusia.</p>
-            </article>
-        </section>
+                <article class="aircraft-card">
+                    <img src="img/tu160-1.jpg" alt="Tupolev-160">
+                    <div class="aircraft-card-content">
+                        <h3>Tupolev-160</h3>
+                        <h4>Performa:</h4>
+                        <ul>
+                            <li>Kecepatan: Mach 2.05 (~2.200 km/jam)</li>
+                            <li>Jangkauan: ~12.300 km</li>
+                            <li>Muatan: 40.000 kg senjata</li>
+                            <li>Mesin: 4 turbofan</li>
+                            <li>Ketinggian: 16.000 m</li>
+                            <li>Awak: 4 orang</li>
+                        </ul>
+                        <h4>Rekam Jejak Keberhasilan:</h4>
+                        <p>Digunakan di Suriah. Menyelesaikan misi dengan rudal jelajah Kh-101 dari Rusia ke Timur Tengah.Keberhasilan misi: Operasi udara di Suriah & latihan global Rusia.</p>
+                    </div>
+                </article>
 
-        <section id="identitas" class="content-section">
-            <h2>Identitas Pembuat</h2>
+            </div> </section>
+
+        <section id="identitas" class="section"> <h2>Identitas Pembuat</h2>
             <p><strong>Nama:</strong> Luxman Insanul Kamil</p>
             <p><strong>NIM:</strong> 11220970000026</p>
             <p><strong>Program Studi:</strong> Fisika-Instrumentasi</p>
@@ -95,6 +100,11 @@
 
     <footer>
         <p>© 2025 Luxman Insanul Kamil - made by me</p>
+        <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
     </footer>
 
     <script>
@@ -104,18 +114,25 @@
             'img/tu160-1.jpg'
         ];
         let slideIndex = 0;
-        const slideshow = document.getElementById('hero-slideshow'); // Menggunakan ID yang baru
+        // Pastikan ID ini cocok dengan ID di HTML (id="hero-slideshow")
+        const slideshow = document.getElementById('hero-slideshow'); 
 
         function changeSlide() {
-            slideshow.style.backgroundImage = `url(${slides[slideIndex]})`;
-            slideshow.style.backgroundSize = 'cover';
-            slideshow.style.backgroundPosition = 'center';
-            slideshow.style.transition = 'background-image 1s ease-in-out'; // Efek transisi
-            slideIndex = (slideIndex + 1) % slides.length;
+            // Memastikan elemen slideshow ada sebelum mencoba mengubahnya
+            if (slideshow) {
+                slideshow.style.backgroundImage = `url(${slides[slideIndex]})`;
+                slideshow.style.backgroundSize = 'cover';
+                slideshow.style.backgroundPosition = 'center';
+                slideshow.style.transition = 'background-image 1s ease-in-out';
+                slideIndex = (slideIndex + 1) % slides.length;
+            }
         }
 
-        changeSlide();
-        setInterval(changeSlide, 4000);
+        // Panggil changeSlide() sekali di awal dan atur interval
+        if (slideshow) { // Pastikan slideshow ada sebelum memanggil fungsi
+            changeSlide();
+            setInterval(changeSlide, 4000);
+        }
     </script>
 </body>
 </html>
