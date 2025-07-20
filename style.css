@@ -192,13 +192,14 @@ p {
 
 .video-responsive {
     position: relative;
-    padding-bottom: 56.25%; /* Rasio aspek 16:9 (tinggi/lebar). Untuk 4:3 gunakan 75% */
+    padding-bottom: 56.25%; /* Rasio aspek 16:9. Untuk 4:3 gunakan 75% */
     height: 0;
     overflow: hidden;
     max-width: 100%;
     background: #000; /* Latar belakang hitam saat loading */
-    margin-bottom: 15px; /* Jarak bawah dari video */
-    border-radius: 8px; /* Sudut sedikit membulat untuk video player */
+    border-top-left-radius: 12px; /* Ikuti border-radius kartu utama */
+    border-top-right-radius: 12px; /* Ikuti border-radius kartu utama */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Tambah sedikit bayangan */
 }
 
 .video-responsive video {
@@ -207,19 +208,36 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Memastikan video pas dalam container tanpa terpotong */
+    object-fit: cover; 
 }
 
+/* Hapus atau komentari gaya untuk .aircraft-card img, karena gambar akan diganti video */
 .aircraft-card img {
-    /* display: none; */
-    max-width: 100%;
-    height: 220px; /* Pertahankan tinggi yang konsisten */
-    object-fit: cover;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    margin-bottom: 15px; /* Jarak ke elemen berikutnya (video) */
+    /* max-width: 100%; */
+    /* height: 220px; */
+    /* object-fit: cover; */
+    /* border-top-left-radius: 12px; */
+    /* border-top-right-radius: 12px; */
+    /* margin-bottom: 15px; */
+    display: none; /* Ini adalah cara paling mudah untuk menyembunyikan gambar jika masih ada */
 }
 
+.aircraft-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden; /* Penting agar video dan border-radius kartu bekerja */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Pastikan konten kartu menumpuk vertikal */
+}
+
+.aircraft-card-content {
+    padding: 25px; /* Pertahankan padding untuk konten teks */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
 /* --- Section Styling (General Content Sections) --- */
 .section { /* A general class for content sections */
     max-width: 1200px;
