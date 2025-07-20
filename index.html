@@ -31,9 +31,8 @@
 
         <article class="aircraft-card">
             <div class="video-responsive">
-                <video controls muted playsinline poster="img/b2-1.jpg">
+                <video class="video-player" controls muted playsinline poster="img/b2-1.jpg">
                     <source src="videos/b2_loop.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
             </div>
             <div class="aircraft-card-content">
@@ -53,7 +52,7 @@
 
         <article class="aircraft-card">
             <div class="video-responsive">
-                <video controls muted playsinline poster="img/rq4-1.jpg">
+                <video class="video-player" controls muted playsinline poster="img/rq4-1.jpg">
                     <source src="videos/rq4_loop.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -75,7 +74,7 @@
 
         <article class="aircraft-card">
             <div class="video-responsive">
-                <video controls muted playsinline poster="img/tu160-1.jpg">
+                <video class="video-player" controls muted playsinline poster="img/tu160-1.jpg">
                     <source src="videos/tu160_loop.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -113,18 +112,17 @@
         </div>
 </footer>
 
-    <script>
+   <script>
+        // --- Skrip untuk Slideshow (jika masih digunakan di bagian hero) ---
         const slides = [
             'img/b2-1.jpg',
             'img/rq4-1.jpg',
             'img/tu160-1.jpg'
         ];
         let slideIndex = 0;
-        // Pastikan ID ini cocok dengan ID di HTML (id="hero-slideshow")
-        const slideshow = document.getElementById('hero-slideshow'); 
+        const slideshow = document.getElementById('hero-slideshow');
 
         function changeSlide() {
-            // Memastikan elemen slideshow ada sebelum mencoba mengubahnya
             if (slideshow) {
                 slideshow.style.backgroundImage = `url(${slides[slideIndex]})`;
                 slideshow.style.backgroundSize = 'cover';
@@ -134,11 +132,47 @@
             }
         }
 
-        // Panggil changeSlide() sekali di awal dan atur interval
-        if (slideshow) { // Pastikan slideshow ada sebelum memanggil fungsi
+        if (slideshow) {
             changeSlide();
             setInterval(changeSlide, 4000);
         }
+
+        // --- Skrip Baru: Autoplay Video saat Di-scroll ---
+
+        // Dapatkan semua elemen video dengan kelas 'video-player'
+        const videoPlayers = document.querySelectorAll('.video-player');
+
+        // Opsi untuk Intersection Observer
+        const options = {
+            root: null, // Mengamati viewport
+            rootMargin: '0px',
+            threshold: 0.7 // Video akan bermain jika 70% dari video terlihat di viewport
+        };
+
+        // Callback function saat video masuk atau keluar dari viewport
+        const observerCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    // Jika video masuk ke viewport, putar
+                    video.play().catch(error => {
+                        // Tangani jika ada error (misal, browser block autoplay)
+                        console.log('Video autoplay blocked or failed:', error);
+                    });
+                } else {
+                    // Jika video keluar dari viewport, pause
+                    video.pause();
+                }
+            });
+        };
+
+        // Buat Intersection Observer
+        const videoObserver = new IntersectionObserver(observerCallback, options);
+
+        // Amati setiap video player
+        videoPlayers.forEach(video => {
+            videoObserver.observe(video);
+        });
     </script>
 </body>
 </html>
