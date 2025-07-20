@@ -1,137 +1,450 @@
 /* style.css */
 
+/* --- Universal Reset & Base Styles --- */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
 }
 
-body, html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.page {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  overflow: hidden;
-    flex: 1 0 auto;
-}
-
-.content {
-  z-index: 2;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-}
-
-.bg-video,
-#slideshow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-#slideshow {
-  background-size: cover;
-  background-position: center;
-  transition: background-image 1s ease-in-out;
-}
-
-h1, h2 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 1.2rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.social-links {
-  margin-top: 20px;
-  font-size: 1rem;
-}
-
-.social-links a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-  padding: 5px 10px;
-  border-radius: 6px;
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: background 0.3s;
-}
-
-.social-links a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #000;
-}
-
-.identity {
-  background-color: #1a1a1a;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 50px 20px;
-  text-align: center;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #111;
-  color: white;
-  font-size: 0.9rem;
-  flex-shrink: 0;
-}
-
-footer .social-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-footer .social-links a {
-  color: white;
-  margin: 0 10px;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-}
-
-footer .social-links a:hover {
-  color: #0abde3; 
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    font-family: 'Poppins', sans-serif; /* Modern, clean font (import from Google Fonts) */
+    line-height: 1.6;
+    color: #333; /* Darker text for better readability */
+    background-color: #f0f2f5; /* Light gray background for overall page */
+    display: flex; /* Flexbox for full page layout */
+    flex-direction: column;
+    min-height: 100vh; /* Ensures body takes full viewport height */
 }
 
+/* --- Global Headings & Paragraphs --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif; /* A stronger, more impactful font for headings */
+    color: #2c3e50; /* Dark blue for headings */
+    margin-bottom: 0.8em; /* Consistent spacing below headings */
+}
+
+h1 {
+    font-size: 3.5rem; /* Larger for main titles */
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 2.5rem; /* For section titles */
+    text-align: center;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px solid #3498db; /* Accent border */
+    display: inline-block; /* To make border-bottom fit content width */
+    width: auto;
+}
+
+p {
+    font-size: 1.1rem; /* Slightly larger for better readability */
+    line-height: 1.8;
+    max-width: 800px; /* Constrain paragraph width for readability */
+    margin: 0 auto 1em auto; /* Center paragraphs and add bottom margin */
+    text-align: justify; /* Justify text for a cleaner block look */
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    background-color: rgba(44, 62, 80, 0.95); /* Dark blue with slight transparency */
+    padding: 15px 0;
+    position: sticky; /* Sticky nav bar */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Max width for nav content */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    color: #ecf0f1; /* Light gray for logo */
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin-left: 30px;
+}
+
+.navbar ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500; /* Medium font weight */
+    font-size: 1.1rem;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #3498db; /* Blue underline */
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.navbar ul li a:hover::after,
+.navbar ul li a.active::after { /* Add 'active' class for current page */
+    width: 100%;
+}
+
+.navbar ul li a:hover {
+    color: #3498db; /* Blue text on hover */
+}
+
+/* --- Hero Section (Page/Slideshow) --- */
+.page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Allows content and possibly scroll indicator */
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    flex: 1 0 auto;
+    padding: 20px; /* Add padding for smaller screens */
+}
+
+.hero-overlay { /* New overlay for better text readability */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay */
+    z-index: 1;
+}
+
+.content {
+    z-index: 2; /* Ensures content is above overlay and background */
+    padding: 40px; /* More padding for a spacious feel */
+    background-color: rgba(0, 0, 0, 0.65); /* Slightly darker background for content */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+    max-width: 90%; /* Responsive width */
+}
+
+/* Specific styling for hero content */
+.page h1 {
+    font-size: 4.5rem; /* Larger for hero section */
+    margin-bottom: 0.2em;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Stronger text shadow */
+    color: #fff; /* White for hero text */
+}
+
+.page p {
+    font-size: 1.5rem; /* Larger for hero paragraph */
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    color: #fff;
+}
+
+/* Video/Slideshow Background */
+.bg-video,
+#slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video/image covers the area */
+    z-index: 0; /* Keep it below content and overlay */
+}
+
+#slideshow {
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out; /* Smooth transition for images */
+}
+
+/* --- Section Styling (General Content Sections) --- */
+.section { /* A general class for content sections */
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.section p, .section ul {
+    margin-bottom: 1em; /* Consistent spacing */
+}
+
+.section ul {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0;
+}
+
+.section ul li {
+    padding-left: 1.5em; /* Space for custom bullet */
+    position: relative;
+    margin-bottom: 0.5em;
+}
+
+.section ul li::before {
+    content: '▶'; /* Custom bullet point */
+    color: #3498db; /* Blue color for bullet */
+    position: absolute;
+    left: 0;
+    font-size: 0.8em;
+    top: 0.2em;
+}
+
+/* --- Aircraft Cards (Assuming you'll have multiple) --- */
+.aircraft-grid { /* New container for layout */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between cards */
+    margin-top: 40px;
+}
+
+.aircraft-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensures image corners are rounded */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Flex container for card content */
+    flex-direction: column;
+}
+
+.aircraft-card:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* Stronger shadow on hover */
+}
+
+.aircraft-card img {
+    width: 100%;
+    height: 220px; /* Fixed height for consistent image size */
+    object-fit: cover; /* Ensures image covers area without distortion */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.aircraft-card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows content area to expand */
+}
+
+.aircraft-card h3 {
+    font-size: 1.8rem;
+    color: #3498db;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.aircraft-card h4 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.aircraft-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.aircraft-card ul li {
+    margin-bottom: 5px;
+    padding-left: 1.2em;
+    position: relative;
+}
+
+.aircraft-card ul li::before {
+    content: '•'; /* Simple bullet */
+    color: #555;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+.aircraft-card p {
+    font-size: 0.95rem;
+    text-align: left; /* Align description text left */
+    margin-bottom: 0;
+}
+
+/* --- Identity Section --- */
+.identity {
+    background-color: #2c3e50; /* Dark blue background */
+    color: #ecf0f1; /* Light text color */
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.identity h2 {
+    color: #ecf0f1; /* White heading for identity section */
+    border-bottom-color: #3498db;
+}
+
+.identity p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ecf0f1;
+}
+
+/* --- Footer --- */
 footer {
-  margin-top: auto;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #1a1a1a; /* Darker footer */
+    color: #cccccc; /* Lighter gray text */
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: auto; /* Pushes footer to the bottom */
 }
 
-@media (max-width: 600px) {
-  footer {
-    font-size: 0.75rem;
-    padding: 10px;
-  }
+footer .social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between social links */
+}
+
+footer .social-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.8rem; /* Larger icons */
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #3498db; /* Blue on hover */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 3.2rem;
+    }
+    h2 {
+        font-size: 2.2rem;
+    }
+    .section {
+        padding: 30px;
+        margin: 30px auto;
+    }
+    .aircraft-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .navbar ul {
+        margin-top: 15px;
+        flex-wrap: wrap; /* Allow navigation items to wrap */
+        justify-content: center;
+    }
+    .navbar ul li {
+        margin: 5px 15px;
+    }
+    .page h1 {
+        font-size: 3rem;
+    }
+    .page p {
+        font-size: 1.2rem;
+    }
+    h1 {
+        font-size: 2.8rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .content {
+        padding: 30px;
+    }
+    .aircraft-card img {
+        height: 180px;
+    }
+    .aircraft-card-content {
+        padding: 20px;
+    }
+    .identity {
+        padding: 40px 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .page {
+        height: 70vh; /* Adjust hero section height for smaller screens */
+    }
+    .page h1 {
+        font-size: 2.5rem;
+    }
+    .page p {
+        font-size: 1rem;
+    }
+    .content {
+        padding: 20px;
+    }
+    .section {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    .aircraft-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically on very small screens */
+        gap: 15px;
+    }
+    footer {
+        font-size: 0.8rem;
+        padding: 20px 10px;
+    }
+    footer .social-links a {
+        font-size: 1.5rem;
+    }
 }
