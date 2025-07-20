@@ -125,6 +125,7 @@ p {
     position: relative;
     width: 100%;
     height: 100vh;
+    min-height: 500px;
     display: flex;
     flex-direction: column; /* Allows content and possibly scroll indicator */
     align-items: center;
@@ -187,6 +188,36 @@ p {
     background-size: cover;
     background-position: center;
     transition: background-image 1s ease-in-out; /* Smooth transition for images */
+}
+
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* Rasio aspek 16:9 (tinggi/lebar). Untuk 4:3 gunakan 75% */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000; /* Latar belakang hitam saat loading */
+    margin-bottom: 15px; /* Jarak bawah dari video */
+    border-radius: 8px; /* Sudut sedikit membulat untuk video player */
+}
+
+.video-responsive video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Memastikan video pas dalam container tanpa terpotong */
+}
+
+.aircraft-card img {
+    /* display: none; */
+    max-width: 100%;
+    height: 220px; /* Pertahankan tinggi yang konsisten */
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin-bottom: 15px; /* Jarak ke elemen berikutnya (video) */
 }
 
 /* --- Section Styling (General Content Sections) --- */
@@ -421,7 +452,8 @@ footer .social-links a:hover {
         font-size: 1rem;
     }
     .page {
-        height: 70vh; /* Adjust hero section height for smaller screens */
+        height: auto;
+        min-height: 400px;/* Adjust hero section height for smaller screens */
     }
     .page h1 {
         font-size: 2.5rem;
